@@ -1,0 +1,53 @@
+
+:root {
+  --animate-delay: 1.s;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Roboto", sans-serif;
+  color:rgb(235, 220, 14);
+  background-color: black;
+}
+
+
+
+h3{
+  letter-spacing: 4px;
+
+  font: 20px "Lato", sans-serif;
+  color: yellow;
+  width: 40%;
+  text-align: center;
+  margin-left: 28rem;
+  margin-top: 3rem;
+  text-decoration-style: solid;
+}
+  .btn{
+ align-items: center;
+ margin-left: 43rem;
+ margin-top: 2rem;
+ 
+  }
+  .btn:hover {
+    background-color: black;
+    color:whitesmoke;
+  }
+  #img_id{
+    width: 30vh;
+    margin-left: 40rem;
+    margin-top: 5rem;
+  }
+  .animate__animated.animate__bounce {
+    --animate-duration: 2s;
+  }
+  
+  /* This changes all the animations globally */
+  :root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+  }
+  #Ebene_1{
+    margin-left:"44rem";
+  }

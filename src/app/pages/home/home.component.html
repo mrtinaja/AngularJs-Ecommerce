@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+
+<body>
+      <div class="demo">
+            <form class="form-search">
+                  <div class="input-group">
+                        <input class="form-control form-text" maxlength="128" placeholder="Buscar productos"
+                              style="width:300px" type="text" [(ngModel)]="searchTerm" name="something" />
+                        <span class="glyphicon glyphicon-user"></span>
+                        <form class="form-inline my-2 my-lg-0">
+                        </form>
+                  </div>
+            </form>
+      </div>
+
+
+      <div class="container">
+            <div class="card" *ngFor="let producto of productos | productoFilter:searchTerm ">
+                  <h5 name="something" class="card-title">{{producto.title}}</h5>
+                  <img src="{{producto.thumbnail}}" class="card-img-top" alt="...">
+                  <div class="clearfix mb-6"> <span
+                              class="float-start price-hp">{{producto.currency_id}}{{producto.price }}</span> </div>
+                  <div class="text-center my-4"> <a routerLink= "/productos/{{producto.id}}"  class="btn btn-warning">Ver
+                              mas</a> </div>
+                  <div class="clearfix mb-1"> <span class="float-start"><i class="far fa-question-circle"></i></span>
+                        <span class="float-end"><i class="fas fa-plus"></i></span>
+                  </div>
+            </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+<app-footer></app-footer>
+</body>

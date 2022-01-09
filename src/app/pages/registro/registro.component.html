@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+   
+
+      <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h2 class="h2">Bienvenido</h2>
+              
+                <input routerLink="/ingresar" type="submit" name="" value="Ingreso"/><br/>
+            </div>
+            <div class="col-md-6 mx-auto text-center">
+              <h1 id="reg_id">Registro</h1>
+              <form  [formGroup]="myForm" (ngSubmit)="registrarse()">
+                <mat-form-field appearance="fill">
+                  <mat-label>Nombre</mat-label>
+                  <input type="text" formControlName="nombre" matInput>
+              </mat-form-field>
+                <div *ngIf="myForm.get('nombre')?.errors && myForm.get('nombre')?.dirty">
+                  El campo es obligatorio
+              </div>
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Apellido</mat-label>
+                    <input type="text" formControlName="nombre" matInput>
+                </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input type="text" formControlName="correo" matInput>
+              </mat-form-field>
+                <div class="form-group">
+                 <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" formControlName="clave" [ngClass]="{error:myForm.get('clave')?.hasError('required') && myForm.get('clave')?.dirty,warning:myForm.get('clave')?.hasError('minlength') && myForm.get('clave')?.dirty}">
+        </mat-form-field>
+                </div>
+                <div *ngIf="myForm.get('clave')?.errors && myForm.get('clave')?.dirty">
+                  <p *ngIf="myForm.get('clave')?.hasError('required')">El campo es obligatorio</p>
+                  <p *ngIf="myForm.get('clave')?.hasError('minlength')">Debe tener al menos 6 caracteres</p>
+               </div>
+                <div class="checkbox">
+                  <label id="checkbox"><input type="checkbox" name="remember"> Recordar</label>
+                </div>
+           
+                <button   class="btn btn-dark"  type="submit" value="Registrarse" [disabled]="myForm.invalid">Registrarse</button>
+              </form>
+              
+            </div>
+    </div>
+    </div>
+
+
+      
+    <app-footer></app-footer>    

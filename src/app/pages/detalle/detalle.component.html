@@ -1,0 +1,83 @@
+<app-menu></app-menu>
+
+<body>
+	<main class="page">
+		<section class="shopping-cart dark">
+			<div class="container">
+				<div class="block-heading">
+					<h2>Carrito de compras</h2>
+				</div>
+				<div class="content">
+					<div class="row">
+						<div class="col-md-12 col-lg-8">
+							<div class="items">
+								<div class="product">
+									<div class="row">
+										<div class="col-md-3">
+											<img class="img-fluid mx-auto d-block image" src="{{producto.thumbnail}}">
+										</div>
+
+										<div class="col-md-9">
+											<div class="info">
+												<div class="row">
+													<div class="col-md-5 product-name">
+														<div class="product-name">
+															<a>{{producto.title}}</a>
+															<div class="col-md-4 quantity">
+																<label  id="quantity" for="quantity">Stock</label>
+																<input id="quantity" type="number"
+																	value="{{producto.available_quantity}}"
+																	class="form-control quantity-input">
+															</div>
+															<div class="col-md-3 price">
+																<span>{{producto.price | currency: 'AR$'}}</span>
+															</div>
+															<div class="product-info">
+															<span *ngIf="mostrarCompleto" >
+  <div [innerHTML]=" textoHTML"></div>
+
+  <a 
+  (click)="mostrarCompleto = !mostrarCompleto" 
+  title="Mostrar texto completo"
+ > {{ productoDetalle.plain_text}}...<button mat-stroked-button color="primary"> Volver</button></a>
+</span>
+
+<span *ngIf="!mostrarCompleto">
+
+  <a 
+  (click)="mostrarCompleto = !mostrarCompleto" 
+  title="Mostrar texto completo"
+   >{{productoDetalle.plain_text | slice: 0:350}}  <button mat-stroked-button color="primary"> Leer mas</button></a>
+</span>
+														
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 col-lg-4">
+							<div class="summary">
+								<h3>Resumen de compra</h3>
+								<div class="summary-item"><span class="text">Subtotal</span><span
+										class="price">{{producto.price | currency}}</span></div>
+								<div class="summary-item"><span class="text">Descuento</span><span
+										class="price">$0</span></div>
+								<div class="summary-item"><span class="text">Costo de envio</span><span
+										class="price">$0</span></div>
+								<div class="summary-item"><span class="text">Total</span><span
+										class="price">{{producto.price | currency}}</span></div>
+								<button routerLink="/inicio" type="button"
+									class="btn btn-dark btn-lg btn-block">Comprar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
