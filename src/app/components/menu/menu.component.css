@@ -1,0 +1,19 @@
+
+
+
+#photo_id{
+    align-items:initial;
+margin-top: 10px;
+margin-bottom: 10px;
+    width: 50px;
+    margin-left:2rem
+}
+.nav-item {
+   font-size:19px;
+}
+#login_id{
+    margin-top: 1.5rem;
+}
+#registro_id{
+    margin-top: 1.5rem;
+}
